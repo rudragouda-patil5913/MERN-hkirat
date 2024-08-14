@@ -1,0 +1,17 @@
+{
+  "name": "prac",
+  "version": "1.0.0",
+  "description": "prac",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "practice"
+  ],
+  "author": "Rudra",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.19.2"
+  }
+}
