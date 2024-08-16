@@ -1,23 +1,13 @@
-const mongoose = require("mongoose");
+const express = require("express");
+const adminRouter = require("./routes/admin");
+const userRouter = require("./routes/user");
 
-mongoose
-  .connect(
-    "mongodb+srv://rudragoudaspatil1298:rudra5913@cluster0.0dz5kxh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0"
-  )
-  .then(() => {
-    console.log("connected");
-  });
+const app = express();
 
-const User = mongoose.model("UsersList", {
-  email: String,
-  password: String,
-  username: String,
+app.use(express.json());
+app.use("/admin", adminRouter);
+app.use("/users", userRouter);
+
+app.listen(3000, () => {
+  console.log("Server running successfully");
 });
-
-const user = new User({
-  email: "rudra@gmail.com",
-  password: "123",
-  username: "rudar",
-});
-console.log(user);
-user.save();
