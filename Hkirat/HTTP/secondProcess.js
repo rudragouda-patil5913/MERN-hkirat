@@ -13,4 +13,4 @@ const obj = {
   method: "GET",
 };
 
-fetch("http://localhost:3000/?count=4524" ,obj).then(callbackFn);
+fetch("http://localhost:3000/sum?count=5" ,obj).then(callbackFn);
